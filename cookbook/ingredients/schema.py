@@ -47,7 +47,7 @@ class Query:
         # Simulating catching an exception and logging, such as with logger.exception().
         # This prints to the console.
         try:
-            raise Exception("Where is my stack trace?")
+            raise Exception("Where is my stack trace 1?")
         except Exception as e:
             print(e)
 

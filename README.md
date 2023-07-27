@@ -1,3 +1,50 @@
+Bug Report Example for Swallowed Exceptions
+
+
+To test, please use:
+
+
+1. For expected Exception being entirely swallowed.
+```
+query {
+  allCategories {
+    id
+    name
+  }
+}
+```
+Expected behavior: Exception with stack trace visible in console.
+Actual behavior: No Exception printed to console. Only output: `[27/Jul/2023 08:23:32] "POST /graphql/ HTTP/1.1" 200 143`
+
+
+2. For unexpected exception being entirely swallowed.
+```
+query {
+  allIngredients {
+    id
+    name
+  }
+}
+```
+Expected behavior: Exception with stack trace visible in console.
+Actual behavior: No Exception printed to console. Only output: `[27/Jul/2023 08:24:09] "POST /graphql/ HTTP/1.1" 200 137`
+
+
+3. For caught exception with print() printing to console.
+```
+query {
+  category {
+    id
+    name
+  }
+}
+```
+Expected behavior: Exception Message printed to console.
+Actual behavior: Exception Message printed to console.
+
+
+
+
 Cookbook Example Django Project
 ===============================
 
